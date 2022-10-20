@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import Calculator from "./components/Calculator";
+import { Box, Button, Container, Grid } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box component="div" sx={{ display: "flex", justifyContent: "center" }}>
+      <Container maxWidth="lg" sx={{ m: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            {/* Support any number of fields and button */}
+            <Calculator
+              inputsNum={5}
+              buttons={["even", "biggest", "smallest"]} // types: "odd", "even", "biggest", "smallest"
+            />
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 }
 
